@@ -12,6 +12,10 @@
 
             <button type="submit">Minify</button>
         </form>
+
+        @isset($shortenedUrl)
+            url successfully shortened to: <a href="/decode/{{ $shortenedUrl }}">127.0.0.1:8000/{{ $shortenedUrl }}</a>
+        @endisset
     </div>
 
 </x-layout>
