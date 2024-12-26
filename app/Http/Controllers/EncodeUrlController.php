@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EncodeUrlRequest;
 use App\Models\Url;
-use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use Vinkla\Hashids\Facades\Hashids;
 
 class EncodeUrlController extends Controller
 {
-    public function __invoke(EncodeUrlRequest $request): View
+    public function __invoke(EncodeUrlRequest $request): RedirectResponse
     {
         $url = Url::create([
             'longUrl' => $request->url
@@ -18,8 +18,8 @@ class EncodeUrlController extends Controller
         $url->shortUrl = Hashids::encode($url->id);
         $url->save();
 
-        return view('home')
-            ->with('shortenedUrl', $url->shortUrl );
+        return redirect('/')
+            ->with('shortenedUrl', $url->shortUrl);
     }
 }
 
