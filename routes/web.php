@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/encode', EncodeUrlController::class);
+Route::post('/encode', EncodeUrlController::class);
