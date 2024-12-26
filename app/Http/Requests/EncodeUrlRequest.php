@@ -9,7 +9,7 @@ class EncodeUrlRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => 'required|string'
+            'url' => 'required|url'
         ];
     }
 }
