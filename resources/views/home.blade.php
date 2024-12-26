@@ -7,7 +7,7 @@
     <div>
         <form action="/encode" method="POST">
             @csrf
-            <label for="url"> url to minify</label>
+            <label for="url"> url to minify (please include http or https)</label>
             <input type="text" name="url" class="rounded border-black">
 
             <button type="submit">Minify</button>
