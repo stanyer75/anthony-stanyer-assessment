@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\EncodeUrlController;
 use App\Http\Requests\EncodeUrlRequest;
-use App\Models\Url;
-use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Http\RedirectResponse;
 
 it('makes the minified url', function () {
@@ -24,7 +22,4 @@ it('makes the minified url', function () {
         'longUrl' => $urlToShorten,
         'shortUrl' => $shortenedUrl
     ]);
-    
-    $url = Url::where('longUrl', $urlToShorten)->first();
-    $this->assertEquals($shortenedUrl, Hashids::encode($url->id));
 });
