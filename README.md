@@ -24,7 +24,7 @@
 
 &nbsp; To create the required database tables, run the following migration command:
 
-&nbsp; &nbsp; `php artisan migrate`
+&nbsp; &nbsp; `php artisan migrate` and ` php artisan migrate --env=testing`
 
 5. **Run The Application:**
 
@@ -35,3 +35,10 @@
 6. **View The Application:**
 
 &nbsp; The app is now running at: [127.0.0.1:8000](http://127.0.0.1:8000)
+
+## Running Tests
+1. **Copy in the `env.testing` file**
+&nbsp; Ensure you have the `.env.testing` file configured correctly in the project root directory.
+
+2. **Run The Tests**
+&nbsp; To run the tests run the command: `./vendor/bin/pest`
